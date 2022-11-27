@@ -1,0 +1,8 @@
+{
+  "name": "MichaelBandWebApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "32de2670"
+}

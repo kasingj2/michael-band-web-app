@@ -3,20 +3,26 @@ import react, { FC } from 'react';
 import { useParams } from 'react-router';
 import ShowsContainer from '../components/ShowsContainer';
 import './Home.css';
+import michaelImage from '../assets/images/homeImage-small.png'
 
 const Home: FC = () => {
 
     return (
-        <IonPage>
+        <IonPage >
             <IonContent class="maincontent" fullscreen>
-                <div className='imagecontainer'>
+                {/* <div className="imagecontainer ion-align-items-center">
+                    <div className='michaelsImage'></div>
+                </div> */}
+                <IonCard>
+                    <IonCardContent className="ion-justify-content-center">
+                        <img className='michaelsImg' src={michaelImage} alt="michaels"></img>
+                    </IonCardContent>
+                </IonCard>
+
+
                 <ShowsContainer />
-                </div>
-
-
-
             </IonContent>
-        </IonPage>
+        </IonPage >
     );
 };
 

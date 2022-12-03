@@ -7,100 +7,98 @@ import './ShowsContainer.css'
 type Props = {}
 
 const ShowsContainer = (props: Props) => {
-  return (
-    <div>ShowsContainer
+    return (
+        <div className='showsContainer'>ShowsContainer
+            <div>
+                <IonGrid>
+                    <IonRow>
+                        <IonCol>
+                            <IonCard >
+                                <IonCardHeader>
+                                    <IonCardTitle>Card Title</IonCardTitle>
+                                    <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <IonList>
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-<div>
-                    <IonGrid>
-                        <IonRow>
-                            <IonCol>
-                                <IonCard>
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-                                    <IonCardHeader>
-                                        <IonCardTitle>Card Title</IonCardTitle>
-                                        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                                    </IonCardHeader>
-                                    <IonCardContent>
-                                        <IonList>
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+                                        <IonItem lines="none">
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
+                                    </IonList>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                        <IonCol>
+                            <IonCard>
+                                <img alt="Silhouette of mountains" src="../../resources/homeImage.png" />
 
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+                                <IonCardHeader>
+                                    <IonCardTitle>Card Title</IonCardTitle>
+                                    <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+                                </IonCardHeader>
+                                <IonCardContent>
+                                    <IonList>
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-                                            <IonItem lines="none">
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
-                                        </IonList>
-                                    </IonCardContent>
-                                </IonCard>
-                            </IonCol>
-                            <IonCol>
-                                <IonCard>
-                                    <img alt="Silhouette of mountains" src="../../resources/homeImage.png" />
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-                                    <IonCardHeader>
-                                        <IonCardTitle>Card Title</IonCardTitle>
-                                        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                                    </IonCardHeader>
-                                    <IonCardContent>
-                                        <IonList>
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+                                        <IonItem>
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
 
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+                                        <IonItem lines="none">
+                                            <IonThumbnail slot="start">
+                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+                                            </IonThumbnail>
+                                            <IonLabel>Item</IonLabel>
+                                        </IonItem>
+                                    </IonList>
+                                </IonCardContent>
+                            </IonCard>
+                        </IonCol>
+                    </IonRow>
+                </IonGrid>
+            </div>
 
-                                            <IonItem>
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
+        </div>
 
-                                            <IonItem lines="none">
-                                                <IonThumbnail slot="start">
-                                                    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                                </IonThumbnail>
-                                                <IonLabel>Item</IonLabel>
-                                            </IonItem>
-                                        </IonList>
-                                    </IonCardContent>
-                                </IonCard>
-                            </IonCol>
-                        </IonRow>
-                    </IonGrid>
-                </div>
-
-    </div>
-
-  )
+    )
 }
 
 export default ShowsContainer

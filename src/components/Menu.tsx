@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -21,44 +21,66 @@ interface AppPage {
   title: string;
 }
 
+interface SocialMedia {
+  url: string
+  iosIcon: string
+  mdIcon: string
+  title: string
+}
+
 const appPages: AppPage[] = [
   {
-    title: 'Inbox',
-    url: '/page/Inbox',
+    title: 'Home',
+    url: '/home',
+    iosIcon: warningOutline,
+    mdIcon: warningSharp
+  },
+  {
+    title: 'Shows',
+    url: '/page/Shows',
     iosIcon: mailOutline,
     mdIcon: mailSharp
   },
   {
-    title: 'Outbox',
-    url: '/page/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    title: 'Music',
+    url: '/page/Music',
+    iosIcon: albumsOutline,
+    mdIcon: albumsSharp
   },
   {
-    title: 'Favorites',
-    url: '/page/Favorites',
+    title: 'Videos',
+    url: '/page/Videos',
+    iosIcon: paperPlaneOutline,
+    mdIcon: paperPlaneSharp
+  },  
+  {
+    title: 'Lyrics',
+    url: '/page/Lyrics',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
   {
-    title: 'Archived',
-    url: '/page/Archived',
+    title: 'Merch',
+    url: '/page/Merch',
     iosIcon: archiveOutline,
     mdIcon: archiveSharp
-  },
-  {
-    title: 'Trash',
-    url: '/page/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/page/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
   }
 ];
+
+const socialMedias: SocialMedia[] = [
+  {
+   title: 'Instagram',
+   url: 'https://www.instagram.com/michael_theband/',
+   iosIcon: logoInstagram,
+   mdIcon: logoInstagram 
+  },
+  {
+    title: 'Sound Cloud',
+    url: 'https://soundcloud.com/michael-michael-187238932',
+    iosIcon: logoSoundcloud,
+    mdIcon: logoSoundcloud
+   }
+]
 
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
@@ -83,14 +105,18 @@ const Menu: React.FC = () => {
           })}
         </IonList>
 
+        <IonListHeader>Social Media</IonListHeader>
         <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
+        {socialMedias.map((socialMedia, index) => {
+            return (
+              <IonMenuToggle key={index} autoHide={false}>
+                <IonItem routerDirection="none" lines="none" detail={false} href={socialMedia.url} target='_blank'>
+                  <IonIcon slot="start" ios={socialMedia.iosIcon} md={socialMedia.mdIcon} />
+                  <IonLabel>{socialMedia.title}</IonLabel>
+                </IonItem>
+              </IonMenuToggle>
+            );
+          })}
         </IonList>
       </IonContent>
     </IonMenu>

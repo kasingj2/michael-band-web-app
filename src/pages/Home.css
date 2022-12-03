@@ -1,0 +1,10 @@
+.maincontent {
+    background-color: aqua;
+}
+
+.imagecontainer {
+    background: url(../../resources/homeImage.png);
+    width: 100%;
+    height: 100%;
+
+}

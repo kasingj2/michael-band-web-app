@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "MichaelBandWebApp",
-	"webDir": "build",
-	"bundledWebRuntime": false
+  "appId": "io.ionic.starter",
+  "appName": "michael-band-web-app",
+  "webDir": "build",
+  "bundledWebRuntime": false
 }

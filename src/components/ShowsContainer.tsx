@@ -1,101 +1,75 @@
 
 
-import { IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonList, IonItem, IonThumbnail, IonLabel } from '@ionic/react'
+import { IonGrid, IonRow, IonCol, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonList, IonItem, IonThumbnail, IonLabel, IonListHeader, IonIcon, IonText, IonButton } from '@ionic/react'
 import React from 'react'
 import './ShowsContainer.css'
+import justDanceDonkeys from '../assets/images/JustDanceDonkeys.png'
+
+
 
 type Props = {}
 
+interface Shows {
+    date: string
+    venue: string
+    cityState: string
+}
+
+const showEvents: Shows[] = [
+    {
+        date: "12/28/22",
+        venue: "tacoma dome",
+        cityState: "tacoma, Wa"
+    },
+    {
+        date: "12/29/22",
+        venue: "Safeco Field",
+        cityState: "Seattle, Wa"
+    },
+    {
+        date: "12/30/22",
+        venue: "Key Arena",
+        cityState: "Tacoma, Wa"
+    }
+]
+
+
 const ShowsContainer = (props: Props) => {
     return (
-        <div className='showsContainer'>ShowsContainer
-            <div>
-                <IonGrid>
-                    <IonRow>
-                        <IonCol>
-                            <IonCard >
-                                <IonCardHeader>
-                                    <IonCardTitle>Card Title</IonCardTitle>
-                                    <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                                </IonCardHeader>
-                                <IonCardContent>
-                                    <IonList>
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem lines="none">
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-                                    </IonList>
-                                </IonCardContent>
-                            </IonCard>
-                        </IonCol>
-                        <IonCol>
-                            <IonCard>
-                                <img alt="Silhouette of mountains" src="../../resources/homeImage.png" />
-
-                                <IonCardHeader>
-                                    <IonCardTitle>Card Title</IonCardTitle>
-                                    <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-                                </IonCardHeader>
-                                <IonCardContent>
-                                    <IonList>
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem>
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-
-                                        <IonItem lines="none">
-                                            <IonThumbnail slot="start">
-                                                <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-                                            </IonThumbnail>
-                                            <IonLabel>Item</IonLabel>
-                                        </IonItem>
-                                    </IonList>
-                                </IonCardContent>
-                            </IonCard>
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
-            </div>
-
+        <div className='showsContainer'>
+            <IonGrid className='showContainerGrid'>
+                <IonRow className=''>
+                    <IonCol>
+                        <IonCard >
+                            <IonCardContent>
+                                <IonList>
+                                    <IonListHeader>Upcoming Shows</IonListHeader>
+                                    {showEvents.map((showEvent, index) => {
+                                        return (
+                                            <IonItem className='' routerDirection="none" lines="none" detail={false}>
+                                                <IonText>{showEvent.date}</IonText>
+                                                <IonLabel className='ion-padding-start'>
+                                                    <h1>{showEvent.venue}</h1>
+                                                    <p>{showEvent.cityState}</p>
+                                                </IonLabel>
+                                                <IonButton>buy</IonButton>
+                                            </IonItem>
+                                        );
+                                    })}
+                                </IonList>
+                            </IonCardContent>
+                        </IonCard>
+                    </IonCol>
+                    <IonCol>
+                        <IonCard class='ion-padding-bottom'>
+                            <IonCardHeader>Merch</IonCardHeader>
+                            <IonCardContent class='ion-justify-content-center'>
+                                <img src={justDanceDonkeys} alt="dance donkeys" ></img>
+                            </IonCardContent>
+                        </IonCard>
+                    </IonCol>
+                </IonRow>
+            </IonGrid>
         </div>
 
     )

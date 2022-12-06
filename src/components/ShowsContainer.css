@@ -1,7 +1,10 @@
+.showContainerGrid {
+  height: fit-content
+}
+
 ion-row {
   flex: auto;
   background-color: transparent;
-
 }
 
 ion-grid {
@@ -14,14 +17,16 @@ ion-col {
     background-color: transparent;
     border: none;
     text-align: center;
+    min-width:max-content;
   }
 
   ion-card{
     background-color: transparent;
     border: none;
-    padding-inline: 20%;
+    padding-inline: 5%;
 
   }
-  ion-card ion-card-header ion-card-title{
-    color:blue;
+
+  ion-list {
+    width: 100%;
   }

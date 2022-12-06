@@ -1,5 +1,4 @@
 
-
 .imagecontainer {
     flex-direction: row;
     justify-content: center;
@@ -21,11 +20,14 @@ ion-card {
     border: none;
 }
 
-
-.showsContainer {
-    position: relative;
-    top: 1%;
+.YoutubeContainer {
+    position: fixed;
+    bottom:0%;
 }
 
+.YoutubeTag {
+    right: 10%;
+    width: fit-content;
+}
 
 

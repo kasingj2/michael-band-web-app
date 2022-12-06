@@ -1,0 +1,16 @@
+.musicPlayerContainer {
+    margin: 1rem;
+    border-style:groove;
+}
+
+.musicPlayerContainer ion-grid {
+    background-color: #383a3e;
+}
+
+.startCol {
+    padding-right:0%;
+}
+
+.endCol {
+    padding-left: 0%;
+}

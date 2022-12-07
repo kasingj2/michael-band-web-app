@@ -1,5 +1,5 @@
 import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
-import react, { FC } from 'react';
+import react, { FC, useState } from 'react';
 import { useParams } from 'react-router';
 import ShowsContainer from '../components/ShowsContainer';
 import './Home.css';
@@ -8,6 +8,12 @@ import { MusicPlayer } from '../components/MusicPlayer';
 import YouTubeFooter from '../components/YoutubeFooter'
 
 const Home: FC = () => {
+
+    const [currentSongDetail, setCurrentSongDetail] = useState({
+        "trackName": "I'm Going Home",
+        "trackLength": "4:02",
+        "youtubeVideoId": "ZQF1rSVu4oo"
+    })
 
     return (
         <IonPage >
@@ -18,10 +24,15 @@ const Home: FC = () => {
                     </IonCardContent>
                 </IonCard>
                 <ShowsContainer />
-                <MusicPlayer />
-                <YouTubeFooter />
+                <MusicPlayer
+                    setCurrentSongDetail={setCurrentSongDetail}
+                />
+                <YouTubeFooter
+                    currentSongDetail={currentSongDetail}
+                />
 
             </IonContent>
+            <div style={{ height: '20rem' }}></div>
         </IonPage >
     );
 };

@@ -11,37 +11,41 @@ import justDanceDonkeys from '../assets/images/JustDanceDonkeys.png'
 
 
 
-export const MusicPlayer = () => {
+export const MusicPlayer = (props: any) => {
 
-    interface SongDetails {
-        trackName: string
-        trackLength: string
-        youtubeVideoId: string
-    }
+    // interface SongDetails {
+    //     trackName: string
+    //     trackLength: string
+    //     youtubeVideoId: string
+    // }
 
     const albumName = SongDetailsJson.albums['Michael-the-Band'].albumName
     const tracksData = SongDetailsJson.albums['Michael-the-Band'].tracks
 
     return (
         <div className='musicPlayerContainer'>
-            <IonCard>
-                <IonCardHeader>Music</IonCardHeader>
+            <IonCard className='ion-no-padding'>
                 <IonGrid>
                     <IonRow className="">
                         <IonCol size='4' className="ion-align-self-start startCol ">
-                            <IonCard>
-                                <IonCardHeader>header 1</IonCardHeader>
+                            <IonCard className='ion-no-padding'>
+                                <IonCardHeader>{albumName}</IonCardHeader>
                                 <IonCardContent className='ion-justify-content-center'>
                                     <IonImg src={justDanceDonkeys} alt="album cover"></IonImg>
                                 </IonCardContent>
                             </IonCard>
+                            <IonList className='buyNowList' color='light'>
+                                <IonListHeader color={'light'}>Buy</IonListHeader>
+                                <IonItem color='light'>Online</IonItem>
+                                <IonItem color='light'>Vinyl</IonItem>
+                                <IonItem color='--ion-color-secondary'>Cassete</IonItem>
+                            </IonList>
                         </IonCol>
                         <IonCol className='endCol'>
                             <IonList>
-                                <IonListHeader>{albumName}</IonListHeader>
                                 {tracksData && tracksData.map(track => {
                                     return (
-                                        <IonItem>
+                                        <IonItem onClick={() => props.setCurrentSongDetail(track)} button>
                                             <IonLabel slot='start'> {track.trackName}</IonLabel>
                                             <IonLabel> {track.trackLength}</IonLabel>
                                             <IonIcon slot='end' ios={musicalNoteOutline}></IonIcon>
@@ -53,7 +57,7 @@ export const MusicPlayer = () => {
                     </IonRow>
                 </IonGrid>
             </IonCard>
-        </div>
+        </div >
     );
 }
 

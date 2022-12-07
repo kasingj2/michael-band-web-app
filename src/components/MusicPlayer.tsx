@@ -1,8 +1,27 @@
-import { IonCard, IonCardContent, IonCardHeader, IonCol, IonGrid, IonRow } from '@ionic/react';
+import { IonCard, IonCardContent, IonCardHeader, IonCol, IonGrid, IonIcon, IonImg, IonItem, IonLabel, IonList, IonListHeader, IonRow } from '@ionic/react';
 import React, { useState } from 'react'
 import './MusicPlayer.css'
+import SongDetailsJson from '../data/SongDetails.json'
+import { musicalNoteOutline } from 'ionicons/icons'
+import justDanceDonkeys from '../assets/images/JustDanceDonkeys.png'
+
+
+
+
+
+
 
 export const MusicPlayer = () => {
+
+    interface SongDetails {
+        trackName: string
+        trackLength: string
+        youtubeVideoId: string
+    }
+
+    const albumName = SongDetailsJson.albums['Michael-the-Band'].albumName
+    const tracksData = SongDetailsJson.albums['Michael-the-Band'].tracks
+
     return (
         <div className='musicPlayerContainer'>
             <IonCard>
@@ -12,14 +31,24 @@ export const MusicPlayer = () => {
                         <IonCol size='4' className="ion-align-self-start startCol ">
                             <IonCard>
                                 <IonCardHeader>header 1</IonCardHeader>
-                                <IonCardContent>content 1</IonCardContent>
+                                <IonCardContent className='ion-justify-content-center'>
+                                    <IonImg src={justDanceDonkeys} alt="album cover"></IonImg>
+                                </IonCardContent>
                             </IonCard>
                         </IonCol>
                         <IonCol className='endCol'>
-                            <IonCard>
-                                <IonCardHeader>header 2</IonCardHeader>
-                                <IonCardContent>content 2</IonCardContent>
-                            </IonCard>
+                            <IonList>
+                                <IonListHeader>{albumName}</IonListHeader>
+                                {tracksData && tracksData.map(track => {
+                                    return (
+                                        <IonItem>
+                                            <IonLabel slot='start'> {track.trackName}</IonLabel>
+                                            <IonLabel> {track.trackLength}</IonLabel>
+                                            <IonIcon slot='end' ios={musicalNoteOutline}></IonIcon>
+                                        </IonItem>
+                                    )
+                                })}
+                            </IonList>
                         </IonCol>
                     </IonRow>
                 </IonGrid>

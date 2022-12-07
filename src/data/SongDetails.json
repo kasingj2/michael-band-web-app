@@ -1,0 +1,75 @@
+{
+	"albums": {
+		"Michael-the-Band": {
+            "albumName": "Michael the Band",
+			"tracks": [
+                {
+					"trackName": "I'm Going Home",
+					"trackLength": "4:02",
+					"youtubeVideoId": "ZQF1rSVu4oo"
+
+				},
+				{
+					"trackName": "Just Dance",
+					"trackLength": "3:50",
+					"youtubeVideoId": "O3ui5usZAhk"
+				},
+				{
+					"trackName": "Regeneration",
+					"trackLength": "4:25",
+					"youtubeVideoId": "gL7ZT0T7IzY"
+				},
+				{
+					"trackName": "Love",
+					"trackLength": "4:46",
+					"youtubeVideoId": "Ue12XVM6chc"
+				},
+				{
+					"trackName": "Softest Beam",
+					"trackLength": "3:43",
+					"youtubeVideoId": "_xbOsaCjye4"
+				},
+				{
+					"trackName": "Carving Parts Within",
+					"trackLength": "2:16",
+					"youtubeVideoId": "qt2ujhlXrBs"
+				},
+				{
+					"trackName": "Chaos and Dancing",
+					"trackLength": "3:10",
+					"youtubeVideoId": "usKn5d3uYOc"
+				},
+				{
+					"trackName": "The Knife",
+					"trackLength": "4:21",
+					"youtubeVideoId": "lDmkRKNBch0"
+				},
+				{
+					"trackName": "Great Walls",
+					"trackLength": "5:15",
+					"youtubeVideoId": "iDjlkKRGx1w"
+				},
+				{
+					"trackName": "Diamond In the Rough",
+					"trackLength": "3:33",
+					"youtubeVideoId": "F6VzoDeFUJg"
+				},
+				{
+					"trackName": "Charter Flight",
+					"trackLength": "3:15",
+					"youtubeVideoId": "sIsYGxzAdC4"
+				},
+				{
+					"trackName": "Phoenix",
+					"trackLength": "3:50",
+					"youtubeVideoId": "iF1Z3Tz4jHs"
+				},
+				{
+					"trackName": "Real",
+					"trackLength": "4:46",
+					"youtubeVideoId": "MTitlBuc1x4"
+				}
+			]
+		}
+	}
+}

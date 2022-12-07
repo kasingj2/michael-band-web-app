@@ -12,13 +12,6 @@ import justDanceDonkeys from '../assets/images/JustDanceDonkeys.png'
 
 
 export const MusicPlayer = (props: any) => {
-
-    // interface SongDetails {
-    //     trackName: string
-    //     trackLength: string
-    //     youtubeVideoId: string
-    // }
-
     const albumName = SongDetailsJson.albums['Michael-the-Band'].albumName
     const tracksData = SongDetailsJson.albums['Michael-the-Band'].tracks
 

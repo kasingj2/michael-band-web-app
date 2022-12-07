@@ -17,11 +17,6 @@ export default function YouTubeFooter({ currentSongDetail }: any) {
 
 
     return (
-        // <IonContent className='YoutubeContainer'>
-        //     <IonItem>
-        //         <YouTube videoId="2g811Eo7K8U" opts={opts} />
-        //     </IonItem>
-        // </IonContent>
         <IonFooter className='YoutubeContainer'>
             <IonItem className="ion-justify-content-middle">
                 <IonIcon ios={playOutline} slot="start">start</IonIcon>

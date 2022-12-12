@@ -5,6 +5,9 @@ import "@ionic/react/css/ionic.bundle.css"
 import Menu from './components/Menu';
 import Page from './pages/Page';
 import Home from './pages/Home'
+import Lyrics from './pages/Lyrics';
+import Sandbox from './pages/Sandbox'
+
 import './App.css'
 
 /* Core CSS required for Ionic components to work properly */
@@ -45,7 +48,11 @@ const App: React.FC = () => {
             <Route path="/home" exact={true}>
               <Home />
             </Route>
+            <Route path="/lyrics" exact={true}>
+              <Lyrics />
+            </Route>
             <Route path="/sandbox" exact={true}>
+              <Sandbox />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

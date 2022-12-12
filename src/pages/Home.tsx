@@ -15,6 +15,10 @@ const Home: FC = () => {
         "youtubeVideoId": "ZQF1rSVu4oo"
     })
 
+    const playButtonOnClick = () => {
+        setCurrentSongDetail(currentSongDetail)
+    }
+
     return (
         <IonPage >
             <IonContent class="maincontent" fullscreen>
@@ -29,6 +33,7 @@ const Home: FC = () => {
                 />
                 <YouTubeFooter
                     currentSongDetail={currentSongDetail}
+                    playButtonOnClick={playButtonOnClick}
                 />
 
             </IonContent>

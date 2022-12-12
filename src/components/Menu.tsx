@@ -52,10 +52,10 @@ const appPages: AppPage[] = [
     url: '/page/Videos',
     iosIcon: paperPlaneOutline,
     mdIcon: paperPlaneSharp
-  },  
+  },
   {
     title: 'Lyrics',
-    url: '/page/Lyrics',
+    url: '/lyrics',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
@@ -69,17 +69,17 @@ const appPages: AppPage[] = [
 
 const socialMedias: SocialMedia[] = [
   {
-   title: 'Instagram',
-   url: 'https://www.instagram.com/michael_theband/',
-   iosIcon: logoInstagram,
-   mdIcon: logoInstagram 
+    title: 'Instagram',
+    url: 'https://www.instagram.com/michael_theband/',
+    iosIcon: logoInstagram,
+    mdIcon: logoInstagram
   },
   {
     title: 'Sound Cloud',
     url: 'https://soundcloud.com/michael-michael-187238932',
     iosIcon: logoSoundcloud,
     mdIcon: logoSoundcloud
-   }
+  }
 ]
 
 const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -107,7 +107,7 @@ const Menu: React.FC = () => {
 
         <IonListHeader>Social Media</IonListHeader>
         <IonList id="labels-list">
-        {socialMedias.map((socialMedia, index) => {
+          {socialMedias.map((socialMedia, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>
                 <IonItem routerDirection="none" lines="none" detail={false} href={socialMedia.url} target='_blank'>

@@ -44,7 +44,6 @@ const App: React.FC = () => {
             <Route path="/page/:name" exact={true}>
               <Page />
             </Route>
-
             <Route path="/home" exact={true}>
               <Home />
             </Route>

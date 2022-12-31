@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { musicalNotesOutline, pricetagOutline, videocamOutline, musicalNoteOutline, homeOutline, logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -32,14 +32,14 @@ const appPages: AppPage[] = [
   {
     title: 'Home',
     url: '/home',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
+    iosIcon: homeOutline,
+    mdIcon: homeOutline
   },
   {
     title: 'Shows',
     url: '/page/Shows',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
+    iosIcon: musicalNoteOutline,
+    mdIcon: musicalNoteOutline
   },
   {
     title: 'Music',
@@ -50,8 +50,8 @@ const appPages: AppPage[] = [
   {
     title: 'Videos',
     url: '/page/Videos',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
+    iosIcon: videocamOutline,
+    mdIcon: videocamOutline
   },
   {
     title: 'Lyrics',
@@ -62,8 +62,8 @@ const appPages: AppPage[] = [
   {
     title: 'Merch',
     url: '/page/Merch',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
+    iosIcon: pricetagOutline,
+    mdIcon: pricetagOutline
   }
 ];
 
@@ -91,8 +91,8 @@ const Menu: React.FC = () => {
     <IonMenu contentId="main" type="overlay">
       <IonContent>
         <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
+          <IonListHeader>Michael the Band</IonListHeader>
+          <IonNote>Seattle, Wa</IonNote>
           {appPages.map((appPage, index) => {
             return (
               <IonMenuToggle key={index} autoHide={false}>

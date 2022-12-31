@@ -21,6 +21,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
+    "@types/youtube": "^0.0.47",
     "cocoapods": "^0.0.0",
     "history": "^4.9.0",
     "ionicons": "^6.0.3",
@@ -43,7 +44,8 @@
     "workbox-range-requests": "^5.1.4",
     "workbox-routing": "^5.1.4",
     "workbox-strategies": "^5.1.4",
-    "workbox-streams": "^5.1.4"
+    "workbox-streams": "^5.1.4",
+    "youtube-player": "^5.5.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -71,7 +73,8 @@
   },
   "devDependencies": {
     "@capacitor/cli": "4.5.0",
-    "@ionic/cli": "6.20.4"
+    "@ionic/cli": "6.20.4",
+    "@types/youtube-player": "^5.5.6"
   },
   "description": "An Ionic project"
 }

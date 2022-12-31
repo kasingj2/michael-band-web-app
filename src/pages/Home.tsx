@@ -6,7 +6,7 @@ import './Home.css';
 import michaelImage from '../assets/images/homeImage-small.png'
 import { MusicPlayer } from '../components/MusicPlayer';
 import YouTubeFooter from '../components/YoutubeFooter'
-
+import YoutubePlayer from '../components/YoutubePlayer';
 const Home: FC = () => {
 
     const [currentSongDetail, setCurrentSongDetail] = useState({
@@ -31,6 +31,9 @@ const Home: FC = () => {
                 <MusicPlayer
                     setCurrentSongDetail={setCurrentSongDetail}
                 />
+
+                {/* <YoutubePlayer currentSongDetail={currentSongDetail} /> */}
+
                 <YouTubeFooter
                     currentSongDetail={currentSongDetail}
                     playButtonOnClick={playButtonOnClick}

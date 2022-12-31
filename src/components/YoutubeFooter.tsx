@@ -1,47 +1,92 @@
 import { IonButton, IonContent, IonFooter, IonIcon, IonItem, IonLabel, IonThumbnail } from '@ionic/react';
-import React, { useRef } from 'react'
-import YouTube from 'react-youtube'
-import { playOutline } from 'ionicons/icons';
+import React, { useRef, useState, useEffect } from 'react'
+import { playOutline, pauseOutline } from 'ionicons/icons';
+import YouTubePlayer from 'youtube-player';
+
+declare global {
+    interface Window { player: any; }
+}
+
 
 export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: any) {
 
-    const ref = useRef(null)
-
-    const opts = {
-        height: '50',
-        width: '50',
-        playerVars: {
-            // https://developers.google.com/youtube/player_parameters
-            autoplay: 0,
-        },
-    };
-
-    // var stopVideo = function ( element ) {
-    //     var iframe = element.querySelector( 'iframe');
-    //     var video = element.querySelector( 'video' );
-    //     if ( iframe ) {
-    //         var iframeSrc = iframe.src;
-    //         iframe.src = iframeSrc;
-    //     }
-    //     if ( video ) {
-    //         video.pause();
-    //     }
-    // };
+    const [isPlaying, setIsPlaying] = useState(false)
+    const [footerActionIcon, setFooterActionIcon] = useState(playOutline)
 
 
+
+    useEffect(() => {
+        const stateNames: { [key: number]: string; } = {
+            '-1': 'unstarted',
+            0: 'ended',
+            1: 'playing',
+            2: 'paused',
+            3: 'buffering',
+            5: 'video cued'
+        };
+
+        if (!window.player) {
+            const player = YouTubePlayer('video-player', {
+                height: '50',
+                width: '50',
+            });
+
+
+            window.player = player
+
+            window.player.on('stateChange', (event: any) => {
+                const num: number = event.data
+                let name = stateNames[num];
+
+                if (!name) {
+
+                    throw new Error('Unknown state (' + event.data + ').');
+
+                }
+
+                console.log('State: ' + name + ' (' + event.data + ').');
+
+
+            });
+
+        }
+        window.player.loadVideoById(currentSongDetail.youtubeVideoId)
+
+    })
+
+`
     const youTubeOnClick = () => {
-        const element = document.querySelector('YouTube')
-        console.log("aaaa")
-        const cur = ref?.current
+        // const element = document.querySelector('YouTube')
+        // console.log("aaaa")
+        // const cur = ref?.current
 
+        //check current playing statec
+        if (isPlaying) {
+            //symbol was pause, change to play
+            //reset the youtube player, stop music
+            window.player.stopVideo()
+            setIsPlaying(false)
+            setFooterActionIcon(playOutline)
 
+        } else {
+            //symbol was pause, change to play
+            //reset the youtube player, stop music
+            setIsPlaying(true)
+            setFooterActionIcon(pauseOutline)
+
+            if (window.player) {
+                window.player.loadVideoById(currentSongDetail.youtubeVideoId)
+                window.player.playVideo()
+            }
+        }
     }
+
 
     return (
         <IonFooter className='YoutubeContainer'>
             <IonItem className="ion-justify-content-middle">
                 <div onClick={youTubeOnClick}>
-                    <IonIcon ios={playOutline} slot="start">start</IonIcon>
+                    <IonIcon ios={footerActionIcon} slot="start">start</IonIcon>
                 </div>
                 <IonLabel>
                     <p>{currentSongDetail.trackName}</p>
@@ -49,7 +94,7 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
                 </IonLabel>
 
                 <IonThumbnail slot='end'>
-                    <YouTube ref={ref} videoId={currentSongDetail.youtubeVideoId} opts={opts} className="YoutubeTag" id="youtubeid" />
+                    <div id='video-player'></div>
                 </IonThumbnail>
             </IonItem>
         </IonFooter>

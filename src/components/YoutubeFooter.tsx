@@ -27,8 +27,9 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
 
         if (!window.player) {
             const player = YouTubePlayer('video-player', {
+                videoId: currentSongDetail.youtubeVideoId,
                 height: '50',
-                width: '50',
+                width: '50'
             });
 
 
@@ -38,29 +39,20 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
                 const num: number = event.data
                 let name = stateNames[num];
 
-                if (!name) {
-
-                    throw new Error('Unknown state (' + event.data + ').');
-
-                }
-
                 console.log('State: ' + name + ' (' + event.data + ').');
-
-
             });
 
         }
-        window.player.loadVideoById(currentSongDetail.youtubeVideoId)
 
-    })
+        if (isPlaying) {
+            window.player.loadVideoById(currentSongDetail.youtubeVideoId)
+        }
 
-`
+    });
+
+
     const youTubeOnClick = () => {
-        // const element = document.querySelector('YouTube')
-        // console.log("aaaa")
-        // const cur = ref?.current
 
-        //check current playing statec
         if (isPlaying) {
             //symbol was pause, change to play
             //reset the youtube player, stop music
@@ -88,7 +80,7 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
                 <div onClick={youTubeOnClick}>
                     <IonIcon ios={footerActionIcon} slot="start">start</IonIcon>
                 </div>
-                <IonLabel>
+                <IonLabel class="ion-padding-horizontal">
                     <p>{currentSongDetail.trackName}</p>
                     <p>{currentSongDetail.trackLength}</p>
                 </IonLabel>

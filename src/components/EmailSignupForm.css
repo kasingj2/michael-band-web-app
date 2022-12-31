@@ -1,0 +1,9 @@
+ion-card.FormCard {
+    background: var(--ion-color-step-200)
+}
+
+
+
+ion-input.emailInputField {
+    width: 20rem;
+}

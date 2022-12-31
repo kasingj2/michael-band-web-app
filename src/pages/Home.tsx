@@ -7,6 +7,7 @@ import michaelImage from '../assets/images/homeImage-small.png'
 import { MusicPlayer } from '../components/MusicPlayer';
 import YouTubeFooter from '../components/YoutubeFooter'
 import YoutubePlayer from '../components/YoutubePlayer';
+import EmailSignupForm from '../components/EmailSignupForm';
 const Home: FC = () => {
 
     const [currentSongDetail, setCurrentSongDetail] = useState({
@@ -38,6 +39,8 @@ const Home: FC = () => {
                     currentSongDetail={currentSongDetail}
                     playButtonOnClick={playButtonOnClick}
                 />
+
+                <EmailSignupForm />
 
             </IonContent>
             <div style={{ height: '20rem' }}></div>

@@ -7,6 +7,10 @@
   transform: translateY(-50%);
 }
 
+.musicPlayerContainer {
+  width:fit-content;
+}
+
 .container strong {
   font-size: 20px;
   line-height: 26px;

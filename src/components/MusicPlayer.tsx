@@ -6,11 +6,6 @@ import { musicalNoteOutline } from 'ionicons/icons'
 import justDanceDonkeys from '../assets/images/JustDanceDonkeys.png'
 
 
-
-
-
-
-
 export const MusicPlayer = (props: any) => {
     const albumName = SongDetailsJson.albums['Michael-the-Band'].albumName
     const tracksData = SongDetailsJson.albums['Michael-the-Band'].tracks

@@ -1,4 +1,4 @@
-import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import react, { FC, useState } from 'react';
 import { useParams } from 'react-router';
 import ShowsContainer from '../components/ShowsContainer';
@@ -8,6 +8,7 @@ import { MusicPlayer } from '../components/MusicPlayer';
 import YouTubeFooter from '../components/YoutubeFooter'
 import YoutubePlayer from '../components/YoutubePlayer';
 import EmailSignupForm from '../components/EmailSignupForm';
+import { menuOutline } from 'ionicons/icons';
 const Home: FC = () => {
 
     const [currentSongDetail, setCurrentSongDetail] = useState({
@@ -21,7 +22,7 @@ const Home: FC = () => {
     }
 
     return (
-        <IonPage >
+        <IonPage>
             <IonContent class="maincontent" fullscreen>
                 <IonCard>
                     <IonCardContent className="ion-justify-content-center">
@@ -32,16 +33,11 @@ const Home: FC = () => {
                 <MusicPlayer
                     setCurrentSongDetail={setCurrentSongDetail}
                 />
-
-                {/* <YoutubePlayer currentSongDetail={currentSongDetail} /> */}
-
                 <YouTubeFooter
                     currentSongDetail={currentSongDetail}
                     playButtonOnClick={playButtonOnClick}
                 />
-
                 <EmailSignupForm />
-
             </IonContent>
             <div style={{ height: '20rem' }}></div>
         </IonPage >

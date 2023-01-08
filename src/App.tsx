@@ -28,6 +28,7 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import { menuOutline } from 'ionicons/icons';
 
 setupIonicReact();
 
@@ -41,14 +42,11 @@ const App: React.FC = () => {
             <Route path="/" exact={true}>
               <Redirect to="/home" />
             </Route>
-            <Route path="/page/:name" exact={true}>
-              <Page />
-            </Route>
             <Route path="/home" exact={true}>
-              <Home />
+              <Page Component={Home} />
             </Route>
             <Route path="/lyrics" exact={true}>
-              <Lyrics />
+              <Page Component={Lyrics} />
             </Route>
             <Route path="/sandbox" exact={true}>
               <Sandbox />

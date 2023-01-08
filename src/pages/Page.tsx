@@ -1,30 +1,55 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonMenuToggle, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { ReactComponentElement } from 'react';
 import { useParams } from 'react-router';
+import Home from './Home';
 
-const Page: React.FC = ({ component }: any) => {
+type props = {
+  Component: React.FC
+}
 
-  const { name } = useParams<{ name: string; }>();
+const toolbarStyle = {
+  backgroundColor: 'transparent'
+}
+
+const Page = ({ Component }: props) => {
+
+  const mainComponent = () => {
+    return <Component />
+  }
 
   return (
-    <IonPage>
+    <div className='pageMenuToggle'>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>{name}</IonTitle>
+          <IonTitle>title</IonTitle>
         </IonToolbar>
       </IonHeader>
-
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">{name}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-      </IonContent>
-    </IonPage>
+      {mainComponent()}
+    </div>
   );
 };
 
 export default Page;
+
+
+{/* <IonPage>
+<IonHeader>
+  <IonToolbar>
+    <IonButtons slot="start">
+      <IonMenuButton />
+    </IonButtons>
+    <IonTitle>{name}</IonTitle>
+  </IonToolbar>
+</IonHeader>
+
+<IonContent fullscreen>
+  <IonHeader collapse="condense">
+    <IonToolbar>
+      <IonTitle size="large">{name}</IonTitle>
+    </IonToolbar>
+  </IonHeader>
+</IonContent>
+</IonPage> */}

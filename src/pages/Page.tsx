@@ -7,49 +7,28 @@ type props = {
   Component: React.FC
 }
 
+const headerStyle = {
+  height: '3rem',
+  zIndex: '1'
+}
 const toolbarStyle = {
-  backgroundColor: 'transparent'
+  border: 'none'
 }
 
 const Page = ({ Component }: props) => {
 
-  const mainComponent = () => {
-    return <Component />
-  }
-
   return (
-    <div className='pageMenuToggle'>
-      <IonHeader>
-        <IonToolbar>
+    <IonPage>
+      <IonHeader style={headerStyle} class="ion-no-border">
+        <IonToolbar style={toolbarStyle}>
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>title</IonTitle>
         </IonToolbar>
       </IonHeader>
-      {mainComponent()}
-    </div>
+      <Component />
+    </IonPage>
   );
 };
 
 export default Page;
-
-
-{/* <IonPage>
-<IonHeader>
-  <IonToolbar>
-    <IonButtons slot="start">
-      <IonMenuButton />
-    </IonButtons>
-    <IonTitle>{name}</IonTitle>
-  </IonToolbar>
-</IonHeader>
-
-<IonContent fullscreen>
-  <IonHeader collapse="condense">
-    <IonToolbar>
-      <IonTitle size="large">{name}</IonTitle>
-    </IonToolbar>
-  </IonHeader>
-</IonContent>
-</IonPage> */}

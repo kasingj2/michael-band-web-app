@@ -9,22 +9,23 @@ import YouTubeFooter from '../components/YoutubeFooter'
 import YoutubePlayer from '../components/YoutubePlayer';
 import EmailSignupForm from '../components/EmailSignupForm';
 import { menuOutline } from 'ionicons/icons';
+import SongDetailsJson from '../data/SongDetails.json'
+
 const Home: FC = () => {
 
-    const [currentSongDetail, setCurrentSongDetail] = useState({
-        "trackName": "I'm Going Home",
-        "trackLength": "4:02",
-        "youtubeVideoId": "ZQF1rSVu4oo"
-    })
+    const [currentSongDetail, setCurrentSongDetail] = useState(SongDetailsJson.albums['Michael-the-Band'].tracks[0])
 
     const playButtonOnClick = () => {
         setCurrentSongDetail(currentSongDetail)
     }
+    const imageCardStyle = {
+        boxShadow: 'none'
+    }
 
     return (
-        <IonPage>
-            <IonContent class="maincontent" fullscreen>
-                <IonCard>
+        <>
+            <IonContent class="maincontent" fullscreen >
+                <IonCard style={imageCardStyle}>
                     <IonCardContent className="ion-justify-content-center">
                         <img className='michaelsImg' src={michaelImage} alt="michaels"></img>
                     </IonCardContent>
@@ -40,7 +41,7 @@ const Home: FC = () => {
                 <EmailSignupForm />
             </IonContent>
             <div style={{ height: '20rem' }}></div>
-        </IonPage >
+        </>
     );
 };
 

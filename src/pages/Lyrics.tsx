@@ -5,15 +5,13 @@ import LyricsComponent from "../components/LyricsComponent";
 const Lyrics = ({ name }: any) => {
 
   return (
-    <IonPage>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-          </IonToolbar>
-        </IonHeader>
-        <LyricsComponent />
-      </IonContent>
-    </IonPage>
+    <IonContent fullscreen>
+      <IonHeader collapse="condense">
+        <IonToolbar>
+        </IonToolbar>
+      </IonHeader>
+      <LyricsComponent />
+    </IonContent>
   )
 }
 

@@ -82,13 +82,11 @@ const socialMedias: SocialMedia[] = [
   }
 ]
 
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-
 const Menu: React.FC = () => {
   const location = useLocation();
 
   return (
-    <IonMenu contentId="main" type="overlay">
+    <IonMenu contentId="main" type="overlay" >
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Michael the Band</IonListHeader>

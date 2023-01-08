@@ -33,7 +33,7 @@ export const MusicPlayer = (props: any) => {
                             <IonList>
                                 {tracksData && tracksData.map(track => {
                                     return (
-                                        <IonItem onClick={() => props.setCurrentSongDetail(track)} button>
+                                        <IonItem key={track.trackName} onClick={() => props.setCurrentSongDetail(track)} button>
                                             <IonLabel slot='start'> {track.trackName}</IonLabel>
                                             <IonLabel> {track.trackLength}</IonLabel>
                                             <IonIcon slot='end' ios={musicalNoteOutline}></IonIcon>

@@ -36,7 +36,6 @@ function EmailSignupForm({ }: Props) {
     return (
 
         <div className='mcFormContainer' style={mcFormContainer}>
-            {/* Begin Mailchimp Signup Form */}
             <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css" />
             <style type="text/css" dangerouslySetInnerHTML={{ __html: "\n\t#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }\n\t/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.\n\t   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */\n" }} />
             <div id="mc_embed_signup" style={mailChimpFormStyle}>
@@ -64,7 +63,6 @@ function EmailSignupForm({ }: Props) {
                     </div>
                 </form>
             </div>
-            {/*End mc_embed_signup*/}
         </div>
 
     )

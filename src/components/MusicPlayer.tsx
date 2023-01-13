@@ -1,5 +1,4 @@
 import { IonCard, IonCardContent, IonCardHeader, IonCol, IonGrid, IonIcon, IonImg, IonItem, IonLabel, IonList, IonListHeader, IonRow } from '@ionic/react';
-import React, { useState } from 'react'
 import './MusicPlayer.css'
 import SongDetailsJson from '../data/SongDetails.json'
 import { musicalNoteOutline } from 'ionicons/icons'

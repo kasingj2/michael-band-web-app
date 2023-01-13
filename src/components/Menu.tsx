@@ -35,36 +35,36 @@ const appPages: AppPage[] = [
     iosIcon: homeOutline,
     mdIcon: homeOutline
   },
-  {
-    title: 'Shows',
-    url: '/page/Shows',
-    iosIcon: musicalNoteOutline,
-    mdIcon: musicalNoteOutline
-  },
-  {
-    title: 'Music',
-    url: '/page/Music',
-    iosIcon: albumsOutline,
-    mdIcon: albumsSharp
-  },
-  {
-    title: 'Videos',
-    url: '/page/Videos',
-    iosIcon: videocamOutline,
-    mdIcon: videocamOutline
-  },
+  // {
+  //   title: 'Shows',
+  //   url: '/page/Shows',
+  //   iosIcon: musicalNoteOutline,
+  //   mdIcon: musicalNoteOutline
+  // },
+  // {
+  //   title: 'Music',
+  //   url: '/page/Music',
+  //   iosIcon: albumsOutline,
+  //   mdIcon: albumsSharp
+  // },
+  // {
+  //   title: 'Videos',
+  //   url: '/page/Videos',
+  //   iosIcon: videocamOutline,
+  //   mdIcon: videocamOutline
+  // },
   {
     title: 'Lyrics',
     url: '/lyrics',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
-  {
-    title: 'Merch',
-    url: '/page/Merch',
-    iosIcon: pricetagOutline,
-    mdIcon: pricetagOutline
-  }
+  // {
+  //   title: 'Merch',
+  //   url: '/page/Merch',
+  //   iosIcon: pricetagOutline,
+  //   mdIcon: pricetagOutline
+  // }
 ];
 
 const socialMedias: SocialMedia[] = [
@@ -86,7 +86,7 @@ const Menu: React.FC = () => {
   const location = useLocation();
 
   return (
-    <IonMenu contentId="main" type="overlay" >
+    <IonMenu contentId="main" menuId='mainMenu' type="overlay" >
       <IonContent>
         <IonList id="inbox-list">
           <IonListHeader>Michael the Band</IonListHeader>

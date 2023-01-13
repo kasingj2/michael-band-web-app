@@ -1,4 +1,4 @@
-import { IonPage, IonHeader, IonToolbar, IonButtons, IonMenuButton, IonTitle, IonContent } from "@ionic/react";
+import { IonHeader, IonToolbar, IonContent } from "@ionic/react";
 import LyricsComponent from "../components/LyricsComponent";
 
 

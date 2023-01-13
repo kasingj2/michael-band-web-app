@@ -1,23 +1,17 @@
-import { IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonMenuButton, IonPage, IonRow, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
-import react, { FC, useState } from 'react';
-import { useParams } from 'react-router';
+import { IonCard, IonCardContent, IonContent } from '@ionic/react';
+import { FC, useState } from 'react';
 import ShowsContainer from '../components/ShowsContainer';
 import './Home.css';
 import michaelImage from '../assets/images/homeImage-small.png'
 import { MusicPlayer } from '../components/MusicPlayer';
 import YouTubeFooter from '../components/YoutubeFooter'
-import YoutubePlayer from '../components/YoutubePlayer';
 import EmailSignupForm from '../components/EmailSignupForm';
-import { menuOutline } from 'ionicons/icons';
 import SongDetailsJson from '../data/SongDetails.json'
 
-const Home: FC = () => {
-
-    const [currentSongDetail, setCurrentSongDetail] = useState(SongDetailsJson.albums['Michael-the-Band'].tracks[0])
-
-    const playButtonOnClick = () => {
-        setCurrentSongDetail(currentSongDetail)
-    }
+type Props = {
+    setCurrentSongDetail: any,
+}
+const Home = ({ setCurrentSongDetail }: Props) => {
     const imageCardStyle = {
         boxShadow: 'none'
     }
@@ -34,13 +28,9 @@ const Home: FC = () => {
                 <MusicPlayer
                     setCurrentSongDetail={setCurrentSongDetail}
                 />
-                <YouTubeFooter
-                    currentSongDetail={currentSongDetail}
-                    playButtonOnClick={playButtonOnClick}
-                />
                 <EmailSignupForm />
             </IonContent>
-            <div style={{ height: '20rem' }}></div>
+            <div style={{ height: '5rem' }}></div>
         </>
     );
 };

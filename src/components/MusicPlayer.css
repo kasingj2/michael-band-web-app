@@ -1,17 +1,20 @@
 .musicPlayerContainer {
     margin: 1rem;
-    border-style:groove;
-    height: 100re;
     padding: 0%;
+    width: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .musicPlayerContainer ion-card {
     height: fit-content;
+    width: fit-content;
 }
 
 .musicPlayerContainer ion-grid {
     background-color: #383a3e;
     height: fit-content;
+    width: fit-content;
 }
 
 .startCol {

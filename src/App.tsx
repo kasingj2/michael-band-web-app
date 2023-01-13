@@ -28,11 +28,26 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { menuOutline } from 'ionicons/icons';
+import YouTubeFooter from './components/YoutubeFooter';
+import SongDetailsJson from './data/SongDetails.json'
+import { useState } from 'react';
+
 
 setupIonicReact();
 
 const App: React.FC = () => {
+  const [currentSongDetail, setCurrentSongDetail] = useState(SongDetailsJson.albums['Michael-the-Band'].tracks[0])
+  const playButtonOnClick = () => {
+    setCurrentSongDetail(currentSongDetail)
+  }
+
+  const renderHomeComponent = () => {
+    return <Home setCurrentSongDetail={setCurrentSongDetail} />
+  }
+  const renderLyricsComponent = () => {
+    return <Lyrics />
+  }
+
   return (
     <IonApp>
       <IonReactRouter>
@@ -43,16 +58,21 @@ const App: React.FC = () => {
               <Redirect to="/home" />
             </Route>
             <Route path="/home" exact={true}>
-              <Page Component={Home} />
+              <Page getComponent={renderHomeComponent} />
             </Route>
             <Route path="/lyrics" exact={true}>
-              <Page Component={Lyrics} />
+              <Page getComponent={renderLyricsComponent} />
             </Route>
             <Route path="/sandbox" exact={true}>
               <Sandbox />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>
+        <div>
+          <YouTubeFooter
+            currentSongDetail={currentSongDetail}
+            playButtonOnClick={playButtonOnClick}
+          /></div>
       </IonReactRouter>
     </IonApp>
   );

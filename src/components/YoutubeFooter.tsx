@@ -1,5 +1,5 @@
-import { IonButton, IonContent, IonFooter, IonIcon, IonItem, IonLabel, IonThumbnail } from '@ionic/react';
-import React, { useRef, useState, useEffect } from 'react'
+import { IonFooter, IonIcon, IonItem, IonLabel, IonThumbnail } from '@ionic/react';
+import { useState, useEffect } from 'react'
 import { playOutline, pauseOutline } from 'ionicons/icons';
 import YouTubePlayer from 'youtube-player';
 
@@ -7,13 +7,10 @@ declare global {
     interface Window { player: any; }
 }
 
-
 export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: any) {
 
     const [isPlaying, setIsPlaying] = useState(false)
     const [footerActionIcon, setFooterActionIcon] = useState(playOutline)
-
-
 
     useEffect(() => {
         const stateNames: { [key: number]: string; } = {
@@ -31,38 +28,27 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
                 height: '50',
                 width: '50'
             });
-
-
             window.player = player
-
             window.player.on('stateChange', (event: any) => {
                 const num: number = event.data
                 let name = stateNames[num];
-
                 console.log('State: ' + name + ' (' + event.data + ').');
             });
-
         }
 
         if (isPlaying) {
             window.player.loadVideoById(currentSongDetail.youtubeVideoId)
         }
-
     });
 
 
     const youTubeOnClick = () => {
-
         if (isPlaying) {
-            //symbol was pause, change to play
-            //reset the youtube player, stop music
             window.player.stopVideo()
             setIsPlaying(false)
             setFooterActionIcon(playOutline)
 
         } else {
-            //symbol was pause, change to play
-            //reset the youtube player, stop music
             setIsPlaying(true)
             setFooterActionIcon(pauseOutline)
 
@@ -72,7 +58,6 @@ export default function YouTubeFooter({ currentSongDetail, playButtonOnClick }: 
             }
         }
     }
-
 
     return (
         <IonFooter className='YoutubeContainer'>

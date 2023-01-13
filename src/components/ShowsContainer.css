@@ -1,5 +1,6 @@
 .showContainerGrid {
-  height: fit-content
+  height: fit-content;
+  width:fit-content
 }
 
 ion-row {
@@ -11,6 +12,7 @@ ion-grid {
   background-color: transparent;
   height: 30rem;
   border: none;
+  width: fit-content;
 }
 
 ion-col {

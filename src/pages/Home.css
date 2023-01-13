@@ -3,12 +3,11 @@
     flex-direction: row;
     justify-content: center;
     height: 60rem;
-    width: 60rem;
+    /* width: 60rem; */
 }
 
 .michaelsImg {
-    width:fit-content;
-    height: fit-content;
+    /* width:fit-content; */
     justify-self: center;
 }
 

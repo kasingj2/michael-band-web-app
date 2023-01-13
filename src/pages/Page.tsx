@@ -1,10 +1,7 @@
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonMenuToggle, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { ReactComponentElement } from 'react';
-import { useParams } from 'react-router';
-import Home from './Home';
+import { IonButtons, IonHeader, IonMenuButton, IonPage, IonToolbar } from '@ionic/react';
 
 type props = {
-  Component: React.FC
+  getComponent: any
 }
 
 const headerStyle = {
@@ -15,7 +12,7 @@ const toolbarStyle = {
   border: 'none'
 }
 
-const Page = ({ Component }: props) => {
+const Page = ({ getComponent }: props) => {
 
   return (
     <IonPage>
@@ -26,7 +23,7 @@ const Page = ({ Component }: props) => {
           </IonButtons>
         </IonToolbar>
       </IonHeader>
-      <Component />
+      {getComponent()}
     </IonPage>
   );
 };

@@ -1,14 +1,9 @@
-import { IonItem, IonLabel, IonInput, IonCheckbox, IonButton, IonCard, IonCardHeader, IonContent, IonCardContent } from '@ionic/react'
 import React from 'react'
 
 type Props = {}
 
 const emailInputFieldStyle = {
-    width: '20rem'
-}
-
-const formCardStyle = {
-    background: `var(--ion-color-step-200)`
+    width: '10rem'
 }
 
 const mailChimpFormStyle = {
@@ -18,14 +13,14 @@ const mailChimpFormStyle = {
     display: 'flex',
     justifyContent: 'center',
     height: '17rem'
-
-
 }
 
 const mcFormContainer = {
     display: 'flex',
     justifyContent: 'center',
-    margin: '10rem',
+    margin: '3rem',
+    padding: '.5rem'
+
 }
 
 const formInputStyle = {

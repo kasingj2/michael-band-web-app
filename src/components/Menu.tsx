@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { pricetagOutline, videocamOutline, musicalNoteOutline, homeOutline, logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { callOutline, mailOpenOutline, pricetagOutline, videocamOutline, musicalNoteOutline, homeOutline, logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -35,36 +35,18 @@ const appPages: AppPage[] = [
     iosIcon: homeOutline,
     mdIcon: homeOutline
   },
-  // {
-  //   title: 'Shows',
-  //   url: '/page/Shows',
-  //   iosIcon: musicalNoteOutline,
-  //   mdIcon: musicalNoteOutline
-  // },
-  // {
-  //   title: 'Music',
-  //   url: '/page/Music',
-  //   iosIcon: albumsOutline,
-  //   mdIcon: albumsSharp
-  // },
-  // {
-  //   title: 'Videos',
-  //   url: '/page/Videos',
-  //   iosIcon: videocamOutline,
-  //   mdIcon: videocamOutline
-  // },
   {
     title: 'Lyrics',
     url: '/lyrics',
     iosIcon: heartOutline,
     mdIcon: heartSharp
   },
-  // {
-  //   title: 'Merch',
-  //   url: '/page/Merch',
-  //   iosIcon: pricetagOutline,
-  //   mdIcon: pricetagOutline
-  // }
+  {
+    title: 'Contact & Booking',
+    url: '/contact',
+    iosIcon: callOutline,
+    mdIcon: callOutline
+  }
 ];
 
 const socialMedias: SocialMedia[] = [
@@ -79,6 +61,12 @@ const socialMedias: SocialMedia[] = [
     url: 'https://soundcloud.com/michael-michael-187238932',
     iosIcon: logoSoundcloud,
     mdIcon: logoSoundcloud
+  },
+  {
+    title: 'Join Mailing List',
+    url: 'https://laylo.com/michaeltheband',
+    iosIcon: mailOpenOutline,
+    mdIcon: mailOpenOutline
   }
 ]
 

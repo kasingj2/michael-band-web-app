@@ -7,6 +7,8 @@ import Page from './pages/Page';
 import Home from './pages/Home'
 import Lyrics from './pages/Lyrics';
 import Sandbox from './pages/Sandbox'
+import Contact from './pages/Contact'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './App.css'
 
@@ -44,9 +46,7 @@ const App: React.FC = () => {
   const renderHomeComponent = () => {
     return <Home setCurrentSongDetail={setCurrentSongDetail} />
   }
-  const renderLyricsComponent = () => {
-    return <Lyrics />
-  }
+
 
   return (
     <IonApp>
@@ -61,10 +61,13 @@ const App: React.FC = () => {
               <Page getComponent={renderHomeComponent} />
             </Route>
             <Route path="/lyrics" exact={true}>
-              <Page getComponent={renderLyricsComponent} />
+              <Page getComponent={() => { return <Lyrics /> }} />
             </Route>
             <Route path="/sandbox" exact={true}>
               <Sandbox />
+            </Route>
+            <Route path="/contact" exact={true}>
+              <Page getComponent={() => { return <Contact /> }} />
             </Route>
           </IonRouterOutlet>
         </IonSplitPane>

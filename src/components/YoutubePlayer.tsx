@@ -9,7 +9,6 @@ declare global {
 
 const YoutubePlayer = ({ currentSongDetail }: Props) => {
 
-
     useEffect(() => {
         // On mount, check to see if the API script is already loaded
 

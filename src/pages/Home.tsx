@@ -11,9 +11,14 @@ import SongDetailsJson from '../data/SongDetails.json'
 type Props = {
     setCurrentSongDetail: any,
 }
+
+const showDummyContainers = false;
+
 const Home = ({ setCurrentSongDetail }: Props) => {
     const imageCardStyle = {
-        boxShadow: 'none'
+        boxShadow: 'none',
+        backgroundColor: 'transparent',
+        border: 'none'
     }
 
     return (
@@ -24,11 +29,11 @@ const Home = ({ setCurrentSongDetail }: Props) => {
                         <img className='michaelsImg' src={michaelImage} alt="michaels"></img>
                     </IonCardContent>
                 </IonCard>
-                <ShowsContainer />
+                {showDummyContainers && <ShowsContainer />}
                 <MusicPlayer
                     setCurrentSongDetail={setCurrentSongDetail}
                 />
-                <EmailSignupForm />
+                {showDummyContainers && <EmailSignupForm />}
             </IonContent>
             <div style={{ height: '5rem' }}></div>
         </>

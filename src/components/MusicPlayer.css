@@ -1,5 +1,4 @@
 .musicPlayerContainer {
-    margin: 1rem;
     padding: 0%;
     width: auto;
     display: flex;
@@ -14,6 +13,10 @@
 .musicPlayerContainer ion-grid {
     background-color: #383a3e;
     height: fit-content;
+    width: fit-content;
+}
+
+.imageCardContent {
     width: fit-content;
 }
 

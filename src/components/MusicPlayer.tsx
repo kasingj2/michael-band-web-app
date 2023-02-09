@@ -12,12 +12,12 @@ export const MusicPlayer = (props: any) => {
     return (
         <div className='musicPlayerContainer'>
             <IonCard className='ion-no-padding'>
-                <IonGrid>
-                    <IonRow className="">
+                <IonGrid class="ion-justify-content-center">
+                    <IonRow className="ion-justify-content-center">
                         <IonCol size='4' className="ion-align-self-start startCol ">
                             <IonCard className='ion-no-padding'>
                                 <IonCardHeader>{albumName}</IonCardHeader>
-                                <IonCardContent className='ion-justify-content-center'>
+                                <IonCardContent className='imageCardContent ion-justify-content-center'>
                                     <IonImg src={justDanceDonkeys} alt="album cover"></IonImg>
                                 </IonCardContent>
                             </IonCard>

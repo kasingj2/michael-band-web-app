@@ -38,9 +38,9 @@ const ShowsContainer = (props: Props) => {
     return (
         <div className='showsContainer'>
             <IonGrid className='showContainerGrid'>
-                <IonRow className=''>
+                <IonRow className='ion-align-items-center ion-justify-content-center'>
                     <IonCol>
-                        <IonCard >
+                        <IonCard className='showsCard' >
                             <IonCardContent>
                                 <IonList>
                                     <IonListHeader>Upcoming Shows</IonListHeader>
@@ -60,8 +60,8 @@ const ShowsContainer = (props: Props) => {
                             </IonCardContent>
                         </IonCard>
                     </IonCol>
-                    <IonCol>
-                        <IonCard class='ion-padding-bottom'>
+                    <IonCol className='ion-align-items-center ion-justify-content-center'>
+                        <IonCard className='merchCard ion-padding-bottom'>
                             <IonCardHeader>Merch</IonCardHeader>
                             <IonCardContent class='ion-justify-content-center'>
                                 <img src={justDanceDonkeys} alt="dance donkeys" ></img>

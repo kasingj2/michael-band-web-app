@@ -1,6 +1,12 @@
 .showContainerGrid {
   height: fit-content;
-  width:fit-content
+  width:fit-content;
+
+}
+
+.showsContainer {
+  display: flex;
+  justify-content: center;
 }
 
 ion-row {
@@ -22,11 +28,15 @@ ion-col {
     min-width:max-content;
   }
 
-  ion-card{
+  ion-card.merchCard {
     background-color: transparent;
     border: none;
-    padding-inline: 5%;
-
+    /* padding-inline: 5%; */
+  }
+  ion-card.showsCard {
+    background-color: transparent;
+    border: none;
+    /* padding-inline: 5%; */
   }
 
   ion-list {

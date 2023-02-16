@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "Experimental";   /*Can be any text*/
+    color: 'black';
+    src: local("Times"),
+      url("../fonts/Monotype\ -\ Helvetica\ Now\ Text.otf") format("otf");
+  }
+
+.tabEntry {
+    font-family: 'Experimental';
+    --bs-nav-link-color: 'black';
+}
+

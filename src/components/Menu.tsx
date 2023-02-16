@@ -9,9 +9,10 @@ import {
   IonMenuToggle,
   IonNote,
 } from '@ionic/react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { useLocation } from 'react-router-dom';
-import { callOutline, mailOpenOutline, pricetagOutline, videocamOutline, musicalNoteOutline, homeOutline, logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { musicalNotesOutline, callOutline, mailOpenOutline, pricetagOutline, videocamOutline, musicalNoteOutline, homeOutline, logoSoundcloud, logoInstagram, albumsOutline, albumsSharp, archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -67,6 +68,12 @@ const socialMedias: SocialMedia[] = [
     url: 'https://laylo.com/michaeltheband',
     iosIcon: mailOpenOutline,
     mdIcon: mailOpenOutline
+  },
+  {
+    title: 'Spotify',
+    url: 'https://open.spotify.com/artist/5QpOB6YSvW4sPyx70sb0SR?si=e4ZaUfrEQ0iU6kp9Ztpxsg',
+    iosIcon: musicalNotesOutline,
+    mdIcon: musicalNotesOutline
   }
 ]
 

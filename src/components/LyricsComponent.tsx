@@ -1,12 +1,14 @@
 import { IonCard, IonCardContent, IonCardHeader, IonGrid, IonRow } from '@ionic/react'
 import React from 'react'
 import SongDetailsJson from '../data/SongDetails.json'
+import './LyricsComponent.css'
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-
-
+import '../fonts/Times.ttc'
+import LyricsImage from '../assets/images/michael-insert-side1.png'
+import BlueLogo from '../assets/images/michael-blue-logo.png'
 
 type Props = {}
 
@@ -15,47 +17,37 @@ const cardContentStyle = {
     color: 'black'
 }
 
+const LyricsContainer = {
+    display: 'flex',
+    width: 'auto',
+    justifyContent: 'center',
+    marginBottom: '10rem'
+}
+const TabContainer = {
+    width: '90%',
+}
 
 const LyricsComponent = (props: Props) => {
 
     const albumName = SongDetailsJson.albums['Michael-the-Band'].albumName
     const tracksData = SongDetailsJson.albums['Michael-the-Band'].tracks
+    const lyricTagStyle = {
+        fontSize: '1rem'
+    }
 
     return (
-        <div>
-            <Tab.Container id="left-tabs-example" defaultActiveKey="first">
-                <Row>
-                    <Col sm={3}>
-                        <Nav variant="pills" className="flex-column">
-                            {tracksData.map(track => {
-                                return (
-                                    <Nav.Item>
-                                        <Nav.Link eventKey={track.trackName}>{track.trackName}</Nav.Link>
-                                    </Nav.Item>
-                                )
-                            })}
-                        </Nav>
-                    </Col>
-                    <Col sm={9}>
-                        <Tab.Content>
-                            {tracksData.map(track => {
-                                return (
-                                    <Tab.Pane eventKey={track.trackName}>
-                                        <p>{track.lyrics}</p>
-                                    </Tab.Pane>
-                                )
-                            })}
-
-
-                        </Tab.Content>
-                    </Col>
-                </Row>
-            </Tab.Container>
-
-
-
+        <div style={LyricsContainer}>
         </div>
     )
 }
 
 export default LyricsComponent
+
+/* 
+    <ListGroup variant="flush">
+      <ListGroup.Item>Cras justo odio</ListGroup.Item>
+      <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+      <ListGroup.Item>Morbi leo risus</ListGroup.Item>
+      <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
+    </ListGroup>
+*/
